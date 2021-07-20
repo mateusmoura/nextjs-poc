@@ -11,10 +11,7 @@ import blogStyles from '../../styles/Blog.module.css';
 
 const Blog = ({ allPosts: { edges } }) => (
   <div className={styles.container}>
-    <Head>
-      <title>Blog articles page</title>
-      <link rel='icon' href='/favicon.ico' />
-    </Head>
+    <Header title='Listagem de todos os Posts' />
 
     <main className={styles.main}>
       <h1 className={styles.title}>Latest blog articles</h1>

@@ -24,10 +24,7 @@ const Post = ({ postData }) => {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>{postData.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Header title={postData.title} />
 
        <main className={styles.main}>
          {router.isFallback ? (

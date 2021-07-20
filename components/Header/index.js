@@ -7,7 +7,7 @@ const Header = ({ title }) => {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-NQRHEP8FM5');
+    gtag('config', 'G-6XRX1BY1KC');
   }, [])
 
   return (
@@ -20,7 +20,7 @@ const Header = ({ title }) => {
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6455703356617422'
       ></script>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQRHEP8FM5"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XRX1BY1KC"></script>
     </Head>
   );
 };
