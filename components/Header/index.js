@@ -7,7 +7,7 @@ const Header = ({ title }) => (
     <link rel='icon' href='/favicon.ico' />
     <script
       async
-      crossorigin='anonymous'
+      crossOrigin='anonymous'
       src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6455703356617422'
     ></script>
   </Head>
