@@ -1,6 +1,7 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+
+import Header from '../../components/Header';
 
 // data
 import { getAllPosts } from '../../lib/api';
