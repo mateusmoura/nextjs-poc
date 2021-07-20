@@ -1,6 +1,6 @@
 module.exports = {
     reactStrictMode: true,
     images: {
-        domains: ['localhost:8888', 'localhost', 'http://localhost', 'http://localhost:8888/'],
+        domains: ['http://dev.webfacetecnologia.com.br/wp-mtech/', 'http://dev.webfacetecnologia.com.br'],
     },
 }
