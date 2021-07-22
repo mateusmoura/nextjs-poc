@@ -15,7 +15,6 @@ export const config = { amp: 'hybrid' };
 
 const Post = ({ postData }) => {
   const router = useRouter();
-  const isAmp = useAmp();
 
   if (!router.isFallback && !postData?.slug || !postData) {
     return <p>Carregando página</p>

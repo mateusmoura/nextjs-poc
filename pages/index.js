@@ -12,8 +12,6 @@ export const config = { amp: 'hybrid' };
 export default function Home() {
   const isAmp = useAmp();
 
-  console.log(`isAmp`, isAmp)
-
   return (
     <div className={styles.container}>
       <Header title='Home POC' />
@@ -47,10 +45,9 @@ export default function Home() {
             ></amp-img>
           ) : (
             <Image
-              src='/vercel.svg'
-              unoptimized={true}
               width={100}
               height={100}
+              src='/vercel.svg'
               alt='Vercel Logo'
               className={styles.logo}
             />
