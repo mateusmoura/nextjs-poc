@@ -11,7 +11,7 @@ import { getAllPosts } from '../../lib/api';
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 
-export const config = { amp: true };
+export const config = { amp: 'hybrid' };
 
 const Blog = ({ allPosts: { edges } }) => {
   const isAmp = useAmp();

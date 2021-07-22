@@ -7,10 +7,12 @@ import Header from '../components/Header';
 
 import styles from '../styles/Home.module.css';
 
-export const config = { amp: true };
+export const config = { amp: 'hybrid' };
 
 export default function Home() {
   const isAmp = useAmp();
+
+  console.log(`isAmp`, isAmp)
 
   return (
     <div className={styles.container}>

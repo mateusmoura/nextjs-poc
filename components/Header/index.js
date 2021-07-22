@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 
-export const config = { amp: true };
+export const config = { amp: 'hybrid' };
 
 const Header = ({ title }) => {
   useEffect(() => {
@@ -31,11 +31,11 @@ const Header = ({ title }) => {
     <Head>
       <title>{title}</title>
       <link rel='icon' href='/favicon.ico' />
-      <script
+      {/* <script
         async
         crossOrigin='anonymous'
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6455703356617422'
-      ></script>
+      ></script> */}
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
       <script
         async

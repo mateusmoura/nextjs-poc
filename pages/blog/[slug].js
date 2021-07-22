@@ -11,7 +11,7 @@ import { getAllPostsWithSlug, getPost } from '../../lib/api';
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 
-export const config = { amp: true };
+export const config = { amp: 'hybrid' };
 
 const Post = ({ postData }) => {
   const router = useRouter();
