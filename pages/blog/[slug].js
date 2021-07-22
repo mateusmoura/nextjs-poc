@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useAmp } from 'next/amp';
 
 import Header from '../../components/Header';
 
@@ -10,8 +11,11 @@ import { getAllPostsWithSlug, getPost } from '../../lib/api';
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 
+export const config = { amp: true };
+
 const Post = ({ postData }) => {
   const router = useRouter();
+  const isAmp = useAmp();
 
   if (!router.isFallback && !postData?.slug || !postData) {
     return <p>Carregando página</p>
