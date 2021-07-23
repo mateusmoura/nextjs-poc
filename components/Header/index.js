@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 export const config = { amp: 'hybrid' };
 
+import 'semantic-ui-css/semantic.min.css';
+
 const Header = ({ title }) => {
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
@@ -43,7 +45,7 @@ const Header = ({ title }) => {
       ></script>
 
       <script
-        async=''
+        async
         src='https://cdn.onesignal.com/sdks/OneSignalSDK.js'
       ></script>
     </Head>

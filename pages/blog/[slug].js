@@ -1,8 +1,16 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useAmp } from 'next/amp';
+// import { useAmp } from 'next/amp';
+import
+  {
+    Dimmer,
+    Loader,
+    Segment,
+    Container,
+  } from 'semantic-ui-react';
 
 import Header from '../../components/Header';
+import MenuPrincial from '../../components/MenuPrincial';
 
 // data
 import { getAllPostsWithSlug, getPost } from '../../lib/api';
@@ -13,14 +21,26 @@ import blogStyles from '../../styles/Blog.module.css';
 
 export const config = { amp: 'hybrid' };
 
-const Post = ({ postData }) => {
+const Post = ({ postData }) =>
+{
   const router = useRouter();
 
   if (!router.isFallback && !postData?.slug || !postData) {
-    return <p>Carregando página</p>
+    return (
+      <Container text textAlign="center">
+        <Segment inverted style={{ height: '100vh' }}>
+          <Dimmer inverted active>
+            <Loader inverted content='Carregando' />
+          </Dimmer>
+
+          {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
+        </Segment>
+      </Container>
+    )
   }
 
-  const formatDate = date => {
+  const formatDate = date =>
+  {
     const newDate = new Date(date);
 
     return `${newDate.getDate()}/${newDate.getMonth()}/${newDate.getFullYear()}`;
@@ -30,33 +50,36 @@ const Post = ({ postData }) => {
     <div className={styles.container}>
       <Header title={postData.title} />
 
-       <main className={styles.main}>
-         {router.isFallback ? (
-           <h2>Loading...</h2>
-         ) : (
-           <article className={blogStyles.article}>
-             <div className={blogStyles.postmeta}>
-               <h1 className={styles.title}>{postData.title}</h1>
-               <p>{formatDate(postData.date)}</p>
-             </div>
+      <MenuPrincial />
 
-             <div className="post-content content" dangerouslySetInnerHTML={{ __html: postData.content }} />
-           </article>
-         )}
+      <main className={styles.main}>
+        {router.isFallback ? (
+          <h2>Loading...</h2>
+        ) : (
+          <article className={blogStyles.article}>
+            <div className={blogStyles.postmeta}>
+              <h1 className={styles.title}>{postData.title}</h1>
+              <p>{formatDate(postData.date)}</p>
+            </div>
 
-         <p>
-           <Link href="/blog">
-             <a>back to articles</a>
-           </Link>
-         </p>
-       </main>
+            <div className="post-content content" dangerouslySetInnerHTML={{ __html: postData.content }} />
+          </article>
+        )}
+
+        <p>
+          <Link href="/blog">
+            <a>back to articles</a>
+          </Link>
+        </p>
+      </main>
     </div>
   )
 }
 
 export default Post;
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = async () =>
+{
   const allPosts = await getAllPostsWithSlug();
 
   return {
@@ -65,7 +88,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) =>
+{
   const data = await getPost(params.slug);
 
   if (!data) {

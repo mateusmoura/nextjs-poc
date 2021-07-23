@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useAmp } from 'next/amp';
 
 import Header from '../../components/Header';
+import MenuPrincial from '../../components/MenuPrincial';
 
 // data
 import { getAllPosts } from '../../lib/api';
@@ -19,6 +20,8 @@ const Blog = ({ allPosts: { edges } }) => {
   return (
     <div className={styles.container}>
       <Header title='Listagem de todos os Posts' />
+
+      <MenuPrincial />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Latest blog articles</h1>
